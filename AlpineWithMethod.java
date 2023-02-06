@@ -1,26 +1,20 @@
 import java.util.Scanner;
-public class AlpineWithMethod {
+public class ALPINE {
 	public static String encrypt(String plaintext,int a,int b)
 	{	
-
-
-		
-			
-			int a;
-			int b;
 			String s="";
 			int len=plaintext.length();
-			int t=0, code=0;
+			int  code=0;
 			System.out.print("Your message Cliptext  : ");
 			for(int i=0;i<len;i++)
 			{
-				t=;
+				
 				 code=(plaintext.charAt(i))-97;
 				int en=((code*b)+a)%26;
 				 char sec=(char)(en+65);
 				 s=s+Character.toString(sec);
 			}
-			System.out.println(s);
+			 return s;
 			
 		}
 	
@@ -39,7 +33,7 @@ public class AlpineWithMethod {
 		//decryption part
 		
 		int len=chipertext.length();
-		int t=0, code=0,en=0;
+		int code=0,en=0;
 		System.out.print("Your message Plaintext  : ");
 		for(int i=0;i<len;i++)
 		{
@@ -47,7 +41,7 @@ public class AlpineWithMethod {
 			
 			
 			//sec for decryption
-			 code=(in.charAt(i))-65;
+			 code=(chipertext.charAt(i))-65;
 			 if(code-a<0)
 			 {
 				 
@@ -63,7 +57,7 @@ public class AlpineWithMethod {
 			 
 			
 	}
-		System.out.println(s);
+		return s;
 		
 	}
 
@@ -88,7 +82,8 @@ public class AlpineWithMethod {
 						ob.close();
 						//System.out.println(in);
 				//encryption part
-						encrypt(plaintext,a,b);
+						String s=encrypt(plaintext,a,b);
+						System.out.println(s);
 					}
 						
 					break;
@@ -102,15 +97,11 @@ public class AlpineWithMethod {
 						System.out.println("Enter Multiplitive Cliper :");
 						int b=ob.nextInt();
 						ob.close();
-						decrypt(chipertext,a,b)
+						String s=decrypt(chipertext,a,b);
+						System.out.println(s);
 						
 						
 						}	
 					}
-				
 			}
-
-		}
-			
-
-	
+}
