@@ -5,6 +5,7 @@ public class ALPINE {
 			String s="";
 			int len=plaintext.length();
 			int  code=0;
+			System.out.print("Your message Cliptext  : ");
 			for(int i=0;i<len;i++)
 			{
 				
@@ -28,11 +29,29 @@ public class ALPINE {
 			   break;
 			}
 		}
+		for(int i=0;i<26;i++)
+		{
+			
+			if((i-a)%26==0)
+			{
+			   a=i;
+			   break;
+			}
+		}
+		for(int i=0;i<26;i++)
+		{
+			if((i+a)%26==1)
+			{
+			   a=i;
+			   break;
+			}
+		}
 		
 		//decryption part
 		
 		int len=chipertext.length();
 		int code=0,en=0;
+		System.out.print("Your message Plaintext  : ");
 		for(int i=0;i<len;i++)
 		{
 		
@@ -63,7 +82,7 @@ public class ALPINE {
 			public static void main(String[] args) {
 				//input part
 			
-						Scanner ob=new Scanner(System.in);
+					
 						System.out.println("Enter Plain text: ");
 						String plaintext= ob.next();
 						System.out.println("Enter Additive Cliper :");
@@ -75,17 +94,16 @@ public class ALPINE {
 				//encryption part
 						
 						String s=encrypt(plaintext,a,b);
-						System.out.println("After encryption,the ciphertext is :");
+						System.out.println("aa");
 						System.out.println(s);
 				
 					
 					//decrypt part
-						String d=decrypt(s,a,b);
-						System.out.println("After decryption,the plaintext is :");
-						System.out.println(d);
+						String s=decrypt(chipertext,a,b);
+						System.out.println(s);
 						
 						
 						}	
 					}
-			
-
+			}
+}
