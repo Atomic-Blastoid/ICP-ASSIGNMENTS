@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class project {
+public class AlpineWithMethod {
 	public static String encrypt(String plaintext,int a,int b)
 	{	
 
