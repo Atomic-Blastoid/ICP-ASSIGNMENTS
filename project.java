@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class te {
+public class AlineWithoutMethod {
 
 
 			public static void main(String[] args) {
